@@ -1,0 +1,78 @@
+name: boilerplate
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  flutter_bloc: ^6.0.4
+  equatable: ^1.2.4
+  dio: ^3.0.10
+  shared_preferences: ^0.5.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.7.5
+  flutter_flavorizr: ^1.0.3
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path_android: "launcher/ic_launcher.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "launcher/ic_foreground.png"
+  image_path_ios: "launcher/ic_launcher.png"
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/illustration/
+    - assets/images/icons/
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+flutter_intl:
+  enabled: true
+
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+
+  flavors:
+    dev:
+      app:
+        name: "Boilerplate Dev"
+
+      android:
+        applicationId: "com.example.dev"
+
+      ios:
+        bundleId: "com.example.dev"
+
+    prod:
+      app:
+        name: "Boilerplate Prod"
+
+      android:
+        applicationId: "com.example.prod"
+      ios:
+        bundleId: "com.example.prod"

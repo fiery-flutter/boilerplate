@@ -1,4 +1,5 @@
 {
     "hello": "Halo",
-    "hello_world": "Halo Dunia"
+    "hello_world": "Halo Dunia",
+    "hi_name": "Hai {name}"
 }

@@ -3,4 +3,4 @@
 FLUTTER_TARGET=lib/main-dev.dart
 
 ASSET_PREFIX=dev
-BUNDLE_NAME=Boilerplate Dev
+BUNDLE_NAME=KodingWorks Dev

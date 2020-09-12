@@ -1,6 +1,6 @@
-import 'package:boilerplate/modules/auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'flavors.dart';
+import 'modules/auth/auth.dart';
 
 class App extends StatelessWidget {
   @override

@@ -9,9 +9,9 @@ class F {
   static String get title {
     switch (appFlavor) {
       case Flavor.DEV:
-        return 'Boilerplate Dev';
+        return 'KodingWorks Dev';
       case Flavor.PROD:
-        return 'Boilerplate Prod';
+        return 'KodingWorks Prod';
       default:
         return 'title';
     }

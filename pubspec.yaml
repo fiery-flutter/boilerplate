@@ -60,19 +60,19 @@ flavorizr:
   flavors:
     dev:
       app:
-        name: "Boilerplate Dev"
+        name: "KodingWorks Dev"
 
       android:
-        applicationId: "com.example.dev"
+        applicationId: "com.kodingworks.dev"
 
       ios:
-        bundleId: "com.example.dev"
+        bundleId: "com.kodingworks.dev"
 
     prod:
       app:
-        name: "Boilerplate Prod"
+        name: "KodingWorks Prod"
 
       android:
-        applicationId: "com.example.prod"
+        applicationId: "com.kodingworks.prod"
       ios:
-        bundleId: "com.example.prod"
+        bundleId: "com.kodingworks.prod"

@@ -5,7 +5,7 @@ class Config {
   static const String APP_NAME = 'Boilerplate';
 
   /// BASE url endpoint API all, in app
-  static const String BASE_URL = 'base_url_domain_here';
+  static const String BASE_URL = 'https://jsonplaceholder.typicode.com';
 
   // ---------------------------------------------------------------------------
 

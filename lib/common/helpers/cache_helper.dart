@@ -4,16 +4,12 @@ class CacheHelper {
   static CacheHelper _instance;
   static SharedPreferences _sharedPreferences;
 
-  static const String ACCESS_TOKEN_KEY = 'accessToken';
-  static const String REFRESH_TOKEN_KEY = 'refreshToken';
+  static const String accessTokenKey = 'accessToken';
+  static const String refreshTokenKey = 'refreshToken';
 
   static Future<CacheHelper> getInstance() async {
-    if (_instance == null) {
-      _instance = CacheHelper();
-    }
-    if (_sharedPreferences == null) {
-      _sharedPreferences = await SharedPreferences.getInstance();
-    }
+    _instance ??= CacheHelper();
+    _sharedPreferences ??= await SharedPreferences.getInstance();
     return _instance;
   }
 

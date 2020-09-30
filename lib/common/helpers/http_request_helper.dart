@@ -5,22 +5,22 @@ import 'package:dio/dio.dart';
 import '../common.dart';
 
 class HttpRequestHelper {
-  Dio _dio = Dio();
-  final String baseUrl;
-
-  HttpRequestHelper({this.baseUrl = AppConfig.BASE_URL}) {
+  HttpRequestHelper({this.baseUrl = AppConfig.baseUrl}) {
     _dio.options.baseUrl = baseUrl;
     _dio.interceptors.add(DioLoggingInterceptors(_dio));
   }
 
+  final String baseUrl;
+  final Dio _dio = Dio();
+
   Future<Response> getRequest(String url) async {
     final response = await _dio.get(
-      "$url",
+      url,
       options: Options(
         contentType: 'application/json',
         responseType: ResponseType.json,
         headers: {
-          "Accept": "*/*",
+          'Accept': '*/*',
         },
       ),
     );
@@ -29,13 +29,13 @@ class HttpRequestHelper {
 
   Future<Response> putRequest(String url, dynamic body) async {
     final response = await _dio.put(
-      "$url",
+      '$url',
       data: FormData.fromMap(body),
       options: Options(
         contentType: 'application/json',
         responseType: ResponseType.json,
         headers: {
-          "Accept": "*/*",
+          'Accept': '*/*',
         },
       ),
     );
@@ -44,12 +44,12 @@ class HttpRequestHelper {
   }
 
   Future<Response> patchRequest(String url, dynamic body) async {
-    final response = await _dio.patch("$url",
+    final response = await _dio.patch('$url',
         options: Options(
           contentType: 'application/json',
           responseType: ResponseType.json,
           headers: {
-            "Accept": "*/*",
+            'Accept': '*/*',
           },
         ),
         data: FormData.fromMap(body));
@@ -65,7 +65,7 @@ class HttpRequestHelper {
         contentType: Headers.jsonContentType,
         responseType: ResponseType.json,
         headers: {
-          "Accept": "*/*",
+          'Accept': '*/*',
         },
       ),
     );
@@ -74,12 +74,12 @@ class HttpRequestHelper {
 
   Future<Response> postRequestRefreshToken(String url) async {
     final response = await _dio.post(
-      "$url",
+      '$url',
       options: Options(
         contentType: Headers.jsonContentType,
         responseType: ResponseType.json,
         headers: {
-          "Accept": "*/*",
+          'Accept': '*/*',
         },
       ),
     );

@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../../features/post/post.dart';
 
 class PostTemp extends StatelessWidget {
-  final List<Post> data;
-
   const PostTemp({Key key, @required this.data}) : super(key: key);
+  final List<Post> data;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

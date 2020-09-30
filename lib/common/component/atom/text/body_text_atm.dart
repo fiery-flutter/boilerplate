@@ -3,12 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../common.dart';
 
 class BodyTextAtm extends StatelessWidget {
-  final String text;
-  final TextStyle style;
-  final int maxLine;
-  final TextOverflow overflow;
-  final TextAlign align;
-
   const BodyTextAtm(
     this.text, {
     Key key,
@@ -18,14 +12,22 @@ class BodyTextAtm extends StatelessWidget {
     this.align,
   }) : super(key: key);
 
+  final String text;
+  final TextStyle style;
+  final int maxLine;
+  final TextOverflow overflow;
+  final TextAlign align;
+
+  TextStyle _getStyle(BuildContext context) =>
+      Theme.of(context).textTheme.bodyText2;
+
   @override
   Widget build(BuildContext context) {
-    final TextStyle _baseStyle = Theme.of(context).textTheme.bodyText2;
-
     return Text(
       text,
-      style: _baseStyle?.merge(style)?.copyWith(fontSize: Dimens.dp12) ??
-          _baseStyle,
+      style:
+          _getStyle(context)?.merge(style)?.copyWith(fontSize: Dimens.dp12) ??
+              _getStyle(context),
       maxLines: maxLine,
       overflow: overflow,
       textAlign: align,

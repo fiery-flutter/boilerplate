@@ -21,7 +21,7 @@ class _PostPageState extends State<PostPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Post Page'),
+        title: const Text('Post Page'),
       ),
       body: _buildBody(),
     );
@@ -32,7 +32,7 @@ class _PostPageState extends State<PostPage> {
       builder: (context, state) {
         print(state);
         if (state is PostLoading) {
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         } else if (state is Postloaded) {
           return PostTemp(data: state.data);
         } else if (state is PostError) {

@@ -10,13 +10,13 @@ abstract class PostState extends Equatable {
 class PostLoading extends PostState {}
 
 class Postloaded extends PostState {
-  final List<Post> data;
-
   Postloaded({@required this.data});
+
+  final List<Post> data;
 }
 
 class PostError extends PostState {
-  final String message;
-
   PostError({@required this.message});
+
+  final String message;
 }

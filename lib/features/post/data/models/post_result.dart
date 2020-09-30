@@ -3,10 +3,7 @@ import 'package:meta/meta.dart';
 import 'models.dart';
 
 class PostResult {
-  final List<Post> data;
-  final String message;
-
-  PostResult({
+  const PostResult({
     @required this.data,
     this.message,
   });
@@ -20,4 +17,7 @@ class PostResult {
         data: null,
         message: message,
       );
+
+  final List<Post> data;
+  final String message;
 }

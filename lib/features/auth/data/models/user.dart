@@ -1,14 +1,27 @@
 import 'dart:convert';
 
 class User {
-  final int id;
-  final String name;
-  final String email;
   User({
     this.id,
     this.name,
     this.email,
   });
+
+  factory User.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
+    return User(
+      id: map['id'],
+      name: map['name'],
+      email: map['email'],
+    );
+  }
+
+  factory User.fromJson(String source) => User.fromMap(json.decode(source));
+
+  final int id;
+  final String name;
+  final String email;
 
   User copyWith({
     int id,
@@ -30,30 +43,8 @@ class User {
     };
   }
 
-  factory User.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
-    return User(
-      id: map['id'],
-      name: map['name'],
-      email: map['email'],
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory User.fromJson(String source) => User.fromMap(json.decode(source));
 
   @override
   String toString() => 'User(id: $id, name: $name, email: $email)';
-
-  @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
-
-    return o is User && o.id == id && o.name == name && o.email == email;
-  }
-
-  @override
-  int get hashCode => id.hashCode ^ name.hashCode ^ email.hashCode;
 }

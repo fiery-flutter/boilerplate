@@ -3,12 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../common.dart';
 
 class PrimaryButtonAtm extends StatelessWidget {
-  final Widget child;
-  final VoidCallback onPressed;
-  final Color color;
-  final Color textColor;
-  final double radius;
-
   const PrimaryButtonAtm(
       {Key key,
       @required this.onPressed,
@@ -18,6 +12,11 @@ class PrimaryButtonAtm extends StatelessWidget {
       this.radius})
       : super(key: key);
 
+  final Widget child;
+  final VoidCallback onPressed;
+  final Color color;
+  final Color textColor;
+  final double radius;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(

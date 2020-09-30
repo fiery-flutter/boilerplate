@@ -5,7 +5,7 @@ class AppConfig {
   static const String appName = 'Boilerplate';
 
   /// BASE url endpoint API all, in app
-  static const String BASE_URL = 'https://jsonplaceholder.typicode.com';
+  static const String baseUrl = 'https://jsonplaceholder.typicode.com';
 
   // ---------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ class AppConfig {
   static const int primaryColor = 0xFF00D1B2;
 
   /// Logo APP Path Assets
-  static const String LOGO_PATH = 'assets/images/logo.png';
+  static const String logoPath = 'assets/images/logo.png';
 
   // ---------------------------------------------------------------------------
 

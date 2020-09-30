@@ -1,10 +1,10 @@
 # Flutter Boilerplate (WIP)
 
 [![Actions Status](https://github.com/wisnuwiry/boilerplate/workflows/build/badge.svg)](https://github.com/wisnuwiry/boilerplate/actions)
-[![CodeCov](https://codecov.io/gh/wisnuwiry/boilerplate/branch/master/graph/badge.svg)](https://github.com/wisnuwiry/boilerplate/actions)
-[![Star On Github](https://img.shields.io/github/stars/wisnuwiry/boilerplate.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/wisnuwiry/boilerplate/actions)
-[![Flutter Website](https://img.shields.io/badge/flutter-website-deepskyblue.svg)](https://github.com/wisnuwiry/boilerplate/actions)
-[![License  MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/wisnuwiry/boilerplate/actions)
+[![CodeCov](https://codecov.io/gh/wisnuwiry/boilerplate/branch/master/graph/badge.svg)](https://github.com/wisnuwiry/boilerplate)
+[![Star On Github](https://img.shields.io/github/stars/wisnuwiry/boilerplate.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/wisnuwiry/boilerplate)
+[![Flutter Website](https://img.shields.io/badge/flutter-website-deepskyblue.svg)](https://github.com/wisnuwiry/boilerplate)
+[![License  MIT](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/wisnuwiry/boilerplate)
 [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 
 ### Requirement:

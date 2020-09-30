@@ -1,7 +1,7 @@
 name: boilerplate
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -14,16 +14,18 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  flutter_bloc: ^6.0.4
-  equatable: ^1.2.4
+  flutter_bloc: ^6.0.5
+  equatable: ^1.2.5
   dio: ^3.0.10
-  shared_preferences: ^0.5.10
+  shared_preferences: ^0.5.12
+  dartz: ^0.9.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.7.5
-  flutter_flavorizr: ^1.0.3
+  flutter_launcher_icons: ^0.8.0
+  very_good_analysis: ^1.0.2
+  bloc_test: ^7.0.4
 
 flutter_icons:
   android: "ic_launcher"
@@ -34,7 +36,6 @@ flutter_icons:
   image_path_ios: "launcher/ic_launcher.png"
 
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -49,30 +50,3 @@ flutter:
   #         style: italic
 flutter_intl:
   enabled: true
-
-
-flavorizr:
-  app:
-    android:
-      flavorDimensions: "flavor-type"
-    ios:
-
-  flavors:
-    dev:
-      app:
-        name: "KodingWorks Dev"
-
-      android:
-        applicationId: "com.kodingworks.dev"
-
-      ios:
-        bundleId: "com.kodingworks.dev"
-
-    prod:
-      app:
-        name: "KodingWorks Prod"
-
-      android:
-        applicationId: "com.kodingworks.prod"
-      ios:
-        bundleId: "com.kodingworks.prod"

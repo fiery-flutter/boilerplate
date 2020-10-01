@@ -29,7 +29,7 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
       options.headers.remove('requirestoken');
       print(
           'accessToken: ${_cacheHelper.getString(CacheHelper.accessTokenKey)}');
-      String accessToken = _cacheHelper.getString(CacheHelper.accessTokenKey);
+      var accessToken = _cacheHelper.getString(CacheHelper.accessTokenKey);
       options.headers.addAll({'Authorization': 'Bearer $accessToken'});
     }
     return options;
@@ -37,11 +37,11 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
 
   @override
   Future onResponse(Response response) {
+    print('<-- ${response.statusCode} ');
     print(
-      '<-- ${response.statusCode} ' +
-          (response.request != null
-              ? (response.request.baseUrl + response.request.path)
-              : 'URL'),
+      (response.request != null
+          ? (response.request.baseUrl + response.request.path)
+          : 'URL'),
     );
     print('Headers:');
     response.headers?.forEach((k, v) => print('$k: $v'));
@@ -51,21 +51,20 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
   }
 
   @override
-  Future onError(DioError dioError) async {
+  Future onError(DioError err) async {
+    print('<-- ${err.message} ');
     print(
-      '<-- ${dioError.message} ' +
-          (dioError.response?.request != null
-              ? (dioError.response.request.baseUrl +
-                  dioError.response.request.path)
-              : 'URL'),
+      (err.response?.request != null
+          ? (err.response.request.baseUrl + err.response.request.path)
+          : 'URL'),
     );
     print(
-      dioError.response != null ? '${dioError.response.data}' : 'Unknown Error',
+      err.response != null ? '${err.response.data}' : 'Unknown Error',
     );
     print('<-- End error');
 
-    int responseCode = dioError.response.statusCode;
-    String oldAccessToken = _cacheHelper.getString(CacheHelper.accessTokenKey);
+    var responseCode = err.response.statusCode;
+    var oldAccessToken = _cacheHelper.getString(CacheHelper.accessTokenKey);
     if (oldAccessToken != null && responseCode == 401 && _cacheHelper != null) {
       _dio.interceptors.requestLock.lock();
       _dio.interceptors.responseLock.lock();
@@ -84,13 +83,13 @@ class DioLoggingInterceptors extends InterceptorsWrapper {
       // await _cacheHelper.putString(
       //     CacheHelper.REFRESH_TOKEN_KEY, newRefreshToken);
 
-      RequestOptions options = dioError.response.request;
+      var options = err.response.request;
       options.headers.addAll({'requirestoken': true});
       _dio.interceptors.requestLock.unlock();
       _dio.interceptors.responseLock.unlock();
       return _dio.request(options.path, options: options);
     } else {
-      super.onError(dioError);
+      await super.onError(err);
     }
   }
 }

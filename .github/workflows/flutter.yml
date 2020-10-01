@@ -33,8 +33,8 @@ jobs:
       run: flutter pub get
     
     # Check for any formatting issues in the code.
-    - name: Format
-      run: flutter format --set-exit-if-changed .
+    # - name: Format
+    #   run: flutter format --set-exit-if-changed .
     
     # Statically analyze the Dart code for any errors.
     - name: Analyze

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../common.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class LightTheme {
   static ThemeData data = ThemeData.light().copyWith(
     primaryColor: AppColors.primaryColor,

@@ -13,6 +13,7 @@ class CacheHelper {
     return _instance;
   }
 
+  // ignore: avoid_positional_boolean_parameters
   Future<bool> putBool(String key, bool value) =>
       _sharedPreferences.setBool(key, value);
 

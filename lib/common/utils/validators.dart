@@ -1,3 +1,4 @@
+// ignore: avoid_classes_with_only_static_members
 class Validators {
   static final RegExp _emailRegExp = RegExp(
     r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$',
@@ -11,10 +12,7 @@ class Validators {
   }
 
   static bool isValidPassword(String password) {
-    if (password.length > 6)
-      return true;
-    else
-      return false;
+    return password.length > 6;
   }
 
   static bool isValidPhoneNumber(String phone) {

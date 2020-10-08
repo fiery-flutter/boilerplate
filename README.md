@@ -1,6 +1,6 @@
 # Flutter Boilerplate (WIP)
 
-[![Flutter workflow][flutter-workflow-badge]][flutter-workflow]
+![Build Status](https://github.com/wisnuwiry/boilerplate/workflows/build/badge.svg)
 [![codecov](https://codecov.io/gh/wisnuwiry/boilerplate/branch/master/graph/badge.svg?token=YIRXS54XJ0)](https://github.com/wisnuwiry/boilerplate)
 [![Star On Github](https://img.shields.io/github/stars/wisnuwiry/boilerplate.svg?style=flat&logo=github&colorB=deeppink&label=stars)](https://github.com/wisnuwiry/boilerplate)
 [![Flutter Website](https://img.shields.io/badge/flutter-website-deepskyblue.svg)](https://flutter.dev/)
@@ -32,16 +32,18 @@
 
 
 ## Use Dimens
-Yang paling direkomendasikan menggunakan ukuran, dan space gunakanlah class `Dimens` ini.
 
-Contoh penggunaan:
+If you use base size, for example 2dp, 4dp, 8dp, size_card_product. You should class `Dimens` to get size.
+
+For example:
 
 ```dart
 SizedBox(width: Dimens.dp8, height: Dimens.height(context)),
 ```
 
 ## Use Color
-Jika ingin menggunakan color gunakan class `AppColors`. Berikut contoh penggunaan:
+
+If use need get all color in your app, put all code color in `AppColors` class, and you need get current color you should use `AppColors` class.
 
 ```dart
 Container(
@@ -49,19 +51,9 @@ Container(
 )
 ```
 
-**Note:**
-Cara diatas nggak efisien jika ingin panggil color misal text, disabledColor, dividerColor. Intinya boleh panggil color dengan cara tersebut, jika color benar-benar fixed/atau nggak perlu dirubah.  
-
-
-> Jika color tersebut adalah bagian dari theme, misal primaryColor, disabledColor, accentColor, erroColor, dll. Gunakan cara berikut:
-
-```dart
-Container(
-    color: Theme.of(context).primaryColor,
-)
-```
-
 ## Use Translate
+
+In this boilerplate I used extensions **Flutter Itl** by Localizy, to easy localization auto generate code, from arb to dart:
 
 Learn more.. https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl
 

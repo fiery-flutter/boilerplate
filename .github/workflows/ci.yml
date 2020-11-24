@@ -34,7 +34,7 @@ jobs:
     
     # Check for any formatting issues in the code.
     - name: Formating Code
-      run: flutter format --set-exit-if-changed lib test
+      run: flutter format --set-exit-if-changed lib/component lib/core lib/features lib/main.dart lib/global_config.dart test
     
     # Statically analyze the Dart code for any errors.
     - name: Analyze Code

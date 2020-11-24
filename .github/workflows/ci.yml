@@ -22,7 +22,7 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable' # 'dev', 'alpha', default to: 'stable'
-        # flutter-version: '1.12.x' # you can also specify exact version of flutter
+        # flutter-version: '1.20.x' # you can also specify exact version of flutter
     
     # Get flutter dependencies.
     - name: Install Dependency
@@ -34,7 +34,7 @@ jobs:
     
     # Check for any formatting issues in the code.
     - name: Formating Code
-      run: flutter format --set-exit-if-changed lib/component lib/core lib/features lib/main.dart lib/global_config.dart test
+      run: flutter format --set-exit-if-changed lib/component lib/core lib/features lib/main_dev.dart lib/main_stagging.dart lib/main_prod.dart test
     
     # Statically analyze the Dart code for any errors.
     - name: Analyze Code
@@ -42,21 +42,26 @@ jobs:
     
     # Run widget tests for our flutter project.
     - name: Run Tests
-      run: flutter test
+      run: flutter test && flutter test --coverage
     
-    - name: Check Code Coverage
-      uses: ChicagoFlutter/lcov-cop@v1.0.0
-      
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+        path: "./coverage/lcov.info"
+        # min_coverage: 95
+        exclude: "**/*_observer.dart **/change.dart"
     
+    - name: Generate Coverage
+      run: genhtml coverage/lcov.info -o coverage/html
+
     # Build apk.
-    # - run: flutter build apk
+    - name: Building to APK (Production)
+      run: flutter build apk -t lib/main_prod.dart
     
     # Upload generated apk to the artifacts.
-    # - uses: actions/upload-artifact@v1
-    #   with:
-    #     name: release-apk
-    #     path: build/app/outputs/apk/release/app-release.apk
+    - uses: actions/upload-artifact@v1
+      with:
+        name: release-apk
+        path: build/app/outputs/apk/release/app-release.apk
+    
+    - name: Clear generate code
+      run: rm -R lib/generated

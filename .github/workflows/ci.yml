@@ -44,12 +44,6 @@ jobs:
     - name: Run Tests
       run: flutter test && flutter test --coverage
     
-    - uses: VeryGoodOpenSource/very_good_coverage@v1.1.1
-      with:
-        path: "./coverage/lcov.info"
-        # min_coverage: 95
-        exclude: "**/*_observer.dart **/change.dart"
-    
     - name: Generate Coverage
       run: genhtml coverage/lcov.info -o coverage/html
 

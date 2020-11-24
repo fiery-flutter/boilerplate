@@ -1,3 +1,4 @@
-export 'error/error.dart';
-export 'platform/platform.dart';
+export 'exceptions/exceptions.dart';
+export 'failures/failures.dart';
+export 'metadata/metadata.dart';
 export 'usecases/usecase.dart';

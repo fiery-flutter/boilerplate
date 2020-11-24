@@ -42,11 +42,8 @@ jobs:
     
     # Run widget tests for our flutter project.
     - name: Run Tests
-      run: flutter test && flutter test --coverage
+      run: flutter test
     
-    - name: Generate Coverage
-      run: genhtml coverage/lcov.info -o coverage/html
-
     # Build apk.
     - name: Building to APK (Production)
       run: flutter build apk -t lib/main_prod.dart

@@ -33,6 +33,7 @@
 /lib/generated/**
 .metadata
 pubspec.lock
+/coverage/**
 
 # Web related
 lib/generated_plugin_registrant.dart
